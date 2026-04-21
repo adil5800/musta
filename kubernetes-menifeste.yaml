@@ -16,22 +16,19 @@ spec:
     spec:
       containers:
       - name: musta-container
-        image: iprocss.azurecr.io/musta:v1
+        image: adil5800/musta:v1
         ports:
         - containerPort: 80
-
+        
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: musta
-  labels:
-    app: musta
-spec:
-  type: LoadBalancer
-  selector:
-    app: musta
-  ports:
-  - name: http
-    port: 80
-    targetPort: 80  
+ apiVersion: v1
+ kind: Service
+ metadata:
+   name: running-service
+ spec:
+   type: ClusterIP
+   selector:
+     app: running
+   ports:
+   - port: 80
+     targetPort: 80
