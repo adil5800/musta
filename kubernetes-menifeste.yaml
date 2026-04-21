@@ -32,3 +32,25 @@ spec:
    ports:
    - port: 80
      targetPort: 80
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: musta-ingress
+  namespace: musta
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: www.cyberrior.com
+    http:
+      paths:
+      - path: /musta
+        pathType: Prefix
+        backend:
+          service:
+            name: musta-service-name
+            port:
+              number: 80     
