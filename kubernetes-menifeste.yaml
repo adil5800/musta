@@ -24,11 +24,11 @@ spec:
  apiVersion: v1
  kind: Service
  metadata:
-   name: running-service
+   name: musta-service
  spec:
    type: ClusterIP
    selector:
-     app: running
+     app: musta
    ports:
    - port: 80
      targetPort: 80
