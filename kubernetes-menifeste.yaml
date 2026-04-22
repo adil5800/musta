@@ -51,6 +51,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: musta-service-name
+            name: musta-service
             port:
               number: 80     
