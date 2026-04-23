@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: musta-container
-        image: adil5800/musta:v2
+        image: adil5800/musta:v3
         ports:
         - containerPort: 80
         
